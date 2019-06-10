@@ -1,14 +1,15 @@
 import crafttweaker.item.IIngredient;
 
+<customblockfabricator:fabricator>.addTooltip("Should not be craftable. Ignore in JEI.");
+
 function addFabricatorToJEI(
-    ticks_required as int,
-    colour as int,
-    block_count as int,
-    counter as int,
-    block_string as string,
-    name as string,
-    recipeName as string,
-    inputs as IIngredient[][]
+    ticks_required as int,    // Ticks per fabrication packet
+    colour as int,            // Colour mask of the block (use 0xHEX_VALUE such as 0xDEDE00)
+    block_count as int,       // Size of fabrication packet
+    block_string as string,   // Block that is fabricated
+    name as string,           // Name of this fabricator in JEI
+    recipeName as string,     // Recipe name for Minecraft internals
+    inputs as IIngredient[][] // Recipe array for the fabricator
 ) {
   val blockItem = <customblockfabricator:fabricator>.withTag(
     {
@@ -16,7 +17,7 @@ function addFabricatorToJEI(
         ticks_required: ticks_required,
         colour: colour,
         block_count: block_count,
-        counter: counter,
+        counter: 0,
         block_string: block_string
       },
       display: {
@@ -24,12 +25,13 @@ function addFabricatorToJEI(
       }
     }
   );
+  blockItem.addTooltip("Generates " + block_count + " blocks every " + ticks_required + " ticks.");
   mods.jei.JEI.addItem(blockItem);
   recipes.addShaped(recipeName, blockItem, inputs);
 }
 
 addFabricatorToJEI(
-  40, 0xDEDE00, 1, 0, "minecraft:cobblestone",
+  40, 0xDEDE00, 1, "minecraft:cobblestone",
   "Gold Plated Cobblestone Generator",
   "gold_cobble_fabricator",
   [
@@ -40,7 +42,7 @@ addFabricatorToJEI(
 );
 
 addFabricatorToJEI(
-  40, 0xDEDE00, 1, 0, "minecraft:stone:5",
+  40, 0xDEDE00, 1, "minecraft:stone:5",
   "Gold Plated Andesite Generator",
   "gold_andesite_fabricator",
   [
@@ -51,7 +53,7 @@ addFabricatorToJEI(
 );
 
 addFabricatorToJEI(
-  40, 0xDEDE00, 1, 0, "minecraft:stone:1",
+  40, 0xDEDE00, 1, "minecraft:stone:1",
   "Gold Plated Granite Generator",
   "gold_granite_fabricator",
   [
@@ -62,7 +64,7 @@ addFabricatorToJEI(
 );
 
 addFabricatorToJEI(
-  40, 0xDEDE00, 1, 0, "minecraft:stone:3",
+  40, 0xDEDE00, 1, "minecraft:stone:3",
   "Gold Plated Diorite Generator",
   "gold_diorite_fabricator",
   [
