@@ -1,0 +1,12 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "normal": {
+      "model": "customblockfabricator:fabricator"
+    },
+    "inventory": {
+      "model": "customblockfabricator:fabricator",
+      "transform": "forge:default-block"
+    }
+  }
+}

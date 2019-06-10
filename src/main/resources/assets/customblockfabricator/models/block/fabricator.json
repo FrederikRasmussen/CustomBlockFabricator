@@ -1,0 +1,144 @@
+{
+  "textures": {
+    "windowed_plating": "customblockfabricator:blocks/fabricator_window_plating",
+    "spy_plating": "customblockfabricator:blocks/fabricator_spy_plating",
+    "solid_plating": "customblockfabricator:blocks/fabricator_solid_plating",
+    "window_glass": "customblockfabricator:blocks/fabricator_glass",
+    "spy_glass": "customblockfabricator:blocks/fabricator_spy_glass",
+    "particle": "customblockfabricator:blocks/fabricator_solid_plating"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "up": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "down": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "north": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "south": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "west": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "east": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        }
+      }
+    },
+    {
+      "from": [ 15.9375, 15.9375, 15.9375 ],
+      "to": [ 0.0625, 0.0625, 0.0625 ],
+      "faces": {
+        "up": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "down": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "north": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "south": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "west": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        },
+        "east": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#window_glass"
+        }
+      }
+    },
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "up": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#solid_plating",
+          "tintindex": 0
+        },
+        "down": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#solid_plating",
+          "tintindex": 0
+        },
+        "north": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        },
+        "south": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        },
+        "west": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        },
+        "east": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [ 15.9375, 15.9375, 15.9375 ],
+      "to": [ 0.0625, 0.0625, 0.0625 ],
+      "faces": {
+        "up": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#solid_plating",
+          "tintindex": 0
+        },
+        "down": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#solid_plating",
+          "tintindex": 0
+        },
+        "north": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        },
+        "south": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        },
+        "west": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        },
+        "east": {
+          "uv": [ 0, 0, 16, 16 ],
+          "texture": "#windowed_plating",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}
