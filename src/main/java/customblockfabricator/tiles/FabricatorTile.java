@@ -50,7 +50,7 @@ public class FabricatorTile extends TileEntity implements ITickable {
     } else {
       throw new RuntimeException("Bad blockname in config: " + blockAsString);
     }
-    block = Block.getBlockFromName(splitName[0] + ":" + splitName[1]);//16738816
+    block = Block.getBlockFromName(splitName[0] + ":" + splitName[1]);
   }
 
   @Override
