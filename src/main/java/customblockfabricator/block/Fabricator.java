@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class Fabricator extends AbstractTileEntity<FabricatorTile> {
   public Fabricator() {
-    super(Material.IRON, "fabricator");
+    super(Material.ROCK, "fabricator");
     setHardness(3.5f);
     setResistance(17.5f);
     setLightOpacity(2);
