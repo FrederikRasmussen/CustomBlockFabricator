@@ -8,11 +8,15 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -65,5 +69,53 @@ public class Fabricator extends AbstractTileEntity<FabricatorTile> {
       NBTTagCompound compound = stack.getSubCompound("BlockEntityTag");
       ((FabricatorTile)tile).handleUpdateTag(compound);
     }
+  }
+
+  @Override
+  public void getDrops(
+    NonNullList<ItemStack> drops,
+    IBlockAccess world,
+    BlockPos blockPos,
+    IBlockState blockState,
+    int fortune
+  ) {
+
+  }
+
+  @Override
+  public void breakBlock(
+    World world,
+    BlockPos blockPos,
+    IBlockState blockState
+  ) {
+    TileEntity tile = world.getTileEntity(blockPos);
+    ItemStack stack = new ItemStack(blockState.getBlock(), 1);
+    NBTTagCompound compound = new NBTTagCompound();
+    tile.writeToNBT(compound);
+    NBTTagCompound finalCompound = new NBTTagCompound();
+    finalCompound.setTag("BlockEntityTag", compound);
+    stack.setTagCompound(finalCompound);
+
+    spawnAsEntity(world, blockPos, stack);
+
+    super.breakBlock(world, blockPos, blockState);
+  }
+
+  @Override
+	public ItemStack getPickBlock(
+    IBlockState blockState,
+    RayTraceResult target,
+    World world,
+    BlockPos pos,
+    EntityPlayer player
+  ) {
+    TileEntity tile = world.getTileEntity(pos);
+    ItemStack stack = new ItemStack(blockState.getBlock(), 1);
+    NBTTagCompound compound = new NBTTagCompound();
+    tile.writeToNBT(compound);
+    NBTTagCompound finalCompound = new NBTTagCompound();
+    finalCompound.setTag("BlockEntityTag", compound);
+    stack.setTagCompound(finalCompound);
+		return stack;
   }
 }
