@@ -38,7 +38,7 @@ public class CustomBlockFabricator {
 
   @EventHandler
 	public void init(FMLInitializationEvent event) {
-    ModBlocks.registerItemAndBlockColors();
+      proxy.registerItemAndBlockColors();
 	}
 
   @Mod.EventBusSubscriber
